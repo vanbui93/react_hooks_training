@@ -14,16 +14,22 @@ function App() {
   function handleTodoClick(todo) {
     console.log(todo);
     const index = todoList.findIndex(x => x.id === todo.id);
-    if(index !== -1) {
+    if (index !== -1) {
       const newTodoList = [...todoList];   //Nhớ clone ra list mới
-      newTodoList.splice(index,1);
+      newTodoList.splice(index, 1);
       setTodoList(newTodoList);
     }
   }
 
-  function handleTodoFormSubmit (formValues) {
+  function handleTodoFormSubmit(formValues) {
     console.log('form submit', formValues);
-    
+    const newTodo = {
+      id: todoList.length + 1,
+      ...formValues,
+    }
+    const newTodoList = [...todoList];
+    newTodoList.push(newTodo);
+    setTodoList(newTodoList);
   }
 
   return (
@@ -32,7 +38,7 @@ function App() {
       <ColorBox />
 
       <h1>TodoList</h1>
-      <TodoForm onSubmit = {handleTodoFormSubmit}/>
+      <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
     </div>
   );
