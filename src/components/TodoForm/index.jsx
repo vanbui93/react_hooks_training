@@ -12,9 +12,18 @@ TodoForm.defaultProps = {
 function TodoForm(props) {
   const { onSubmit } = props;
   const [value, setValue] = useState('');
+  function handleValueChange(e) {
+    console.log(e.target.value);
+    setValue(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
-    <form>
-      <input type="text" value={value} />
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={value} onChange={handleValueChange}/>
     </form>
   );
 }
