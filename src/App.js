@@ -6,6 +6,7 @@ import TodoForm from './components/TodoForm';
 import PostList from './components/PostList';
 import Pagination from './components/Pagination';
 import queryString from 'query-string';
+import PostFilterForm from './components/PostFilterForm';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -88,6 +89,8 @@ function App() {
       <h1>TodoList</h1>
       <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
+
+      <PostFilterForm/>
       <PostList posts={postList} />
       <Pagination
         pagination={pagination}
