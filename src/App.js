@@ -5,6 +5,7 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import PostList from './components/PostList';
 import Pagination from './components/Pagination';
+import queryString from 'query-string';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -20,27 +21,42 @@ function App() {
     _totalRows: 11,
   });
 
+  const [filters, setFilters] = useState({
+    _page: 1,
+    _limit: 10,
+  });
+
   useEffect(() => {
     async function fetchPostList() {
       try {
-        const requestUrl = 'http://js-post-api.herokuapp.com/api/posts?_limit=10&_page=1';
+
+        //_limit=10&page=1    
+        const paramString = queryString.stringify(filters);   //chuyển filters thành dạng _limit=10&page=1
+
+        const requestUrl = `http://js-post-api.herokuapp.com/api/posts?${paramString}`;
         const response = await fetch(requestUrl);
         const responseJSON = await response.json();
         console.log(responseJSON);
 
-        const { data } = responseJSON;
+        const { data, pagination } = responseJSON;
+        
         setPostList(data);
+        setPagination(pagination);
       } catch (error) {
         console.log('Failed to fetch post list', error.message);
       }
     }
     console.log('POST list effect');
     fetchPostList();
-  }, []);  //dấu [] là để chạy đúng 1 lần
+  }, [filters]);  //dấu [] là để chạy đúng 1 lần,  [filters] là dependencies, mỗi khi filters thay đổi thì sẽ chạy lại hàm useEffect()
 
   function handlePageChange(newPage) {
     console.log(newPage);
-
+    setFilters({
+      ...filters,
+      _page: newPage,
+    });
+    console.log(newPage);
   }
 
   function handleTodoClick(todo) {

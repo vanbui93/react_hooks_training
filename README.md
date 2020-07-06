@@ -98,7 +98,23 @@ return <h1>Easy Frontend</h1>;
 - Lưu ý: 
  -- nút **prev** sẽ bị disable nếu đang ở trang 1<br>
  -- nút **next** sẽ bị disable nếu đang ở trang cuối
+### Cài đặt package chuyển object thành queryString
+```sh
+npm i --save query-string
+```
 
+vd<br>
+object
+```js
+{
+  _limit: 10,
+  _page: 1,
+}
+```
+queryString
+```js
+_limit=10&page=1
+```
 
 ### useContext()
 ### useReducer()
