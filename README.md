@@ -2,8 +2,9 @@ REACT HOOKS - code được viết trong khi làm training của senior Hậu Ng
 
 ## Table of Contents
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
-- [Khi  nào dùng React Hooks ?](#khi-nào-dùng-react-hooks-?)
-- [Tại sao nên dùng hooks ?](###tại-sao-nên-dùng-hooks-?)
+- [Kết hợp Sass vào node](#kết-hợp-sass-vào-node)
+- [Khi  nào dùng React Hooks ?](#khi--nào-dùng-react-hooks-)
+- [Tại sao nên dùng hooks ?](#tại-sao-nên-dùng-hooks-)
 - [useState()](#usestate)
 - [useEffect()](#useeffect)
 - [Cài đặt component Pagination](#cài-đặt-component-pagination)
