@@ -8,7 +8,7 @@ REACT HOOKS - code được viết trong khi làm training của senior Hậu Ng
 - [useState()](#usestate)
 - [useEffect()](#useeffect)
 - [Cài đặt component Pagination](#cài-đặt-component-pagination)
-- [useRef - sử dụng kỹ thuật debounce setTimeout](#useref--sử-dụng-kỹ-thuật-debounce-settimeout)
+- [useRef() - sử dụng kỹ thuật debounce setTimeout](#useref---sử-dụng-kỹ-thuật-debounce-settimeout)
 
 ## Tài liệu tham khảo
 S0: https://drive.google.com/file/d/11FZZ6B5TzASNTYEPSXTuywzJ9jqxR8Xq/view <br>
@@ -20,6 +20,7 @@ S5: https://drive.google.com/file/d/10WarKgzSM5Ou1R64OqdiutEl_Y2hDIXG/view <br>
 S6: https://drive.google.com/file/d/1CXxCJsabcG3IkSG1PQaWNVv12ePYICA1/view <br>
 S7: https://drive.google.com/file/d/1UzWLVDvZ7LwsCDrttGyQB6zJve0YA_TU/view <br>
 S8: https://drive.google.com/file/d/1u-wdW1gbRl3OksMzQwzTNqayyK-qNB50/view <br>
+s9: https://drive.google.com/file/d/1XBmPJU8ZwnEV96xtDBRpRvkUv8qkUHx-/view <br>
 
 
 ## Khi  nào dùng React Hooks ?
@@ -117,8 +118,6 @@ queryString
 ```js
 _limit=10&page=1
 ```
-
-### Sử dụng kỹ thuật debounce
 
 ### useRef - sử dụng kỹ thuật debounce setTimeout
 Sẽ giữ nguyên giá trị sau mỗi lần render

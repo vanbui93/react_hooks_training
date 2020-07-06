@@ -14,7 +14,6 @@ function PostList(props) {
   const { posts } = props;
   return (
     <div className="post-list">
-      <h1>Post List</h1>
       <ul>
         {posts.map((post, index) => (
           <li key={index}>{post.title}</li>

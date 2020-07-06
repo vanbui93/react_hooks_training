@@ -95,6 +95,7 @@ function App() {
       <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
 
+      
       <PostFilterForm onSubmit={handleSearchTermChange}/>
       <PostList posts={postList} />
       <Pagination

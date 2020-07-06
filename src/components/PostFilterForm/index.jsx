@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
+import './style.scss';
 
 PostFilterForm.propTypes = {
   onSubmit: PropTypes.func,
@@ -37,7 +38,9 @@ function PostFilterForm(props) {
   }
 
   return (
-    <div>
+    <div className="post-filter-list">
+      <h1>Post List</h1>
+      <p>Nhập vào thứ bạn muốn tìm kiếm</p>
       <input
         type="text"
         value={searchTerm}
