@@ -3,9 +3,9 @@ REACT HOOKS - code được viết trong khi làm training của senior Hậu Ng
 ## Table of Contents
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 - [Khi  nào dùng React Hooks ?](#khi-nào-dùng-react-hooks-?)
-- [](#)
-- [](#)
-- [](#)
+- [Tại sao nên dùng hooks ?](###tại-sao-nên-dùng-hooks-?)
+- [useState()](#usestate)
+- [useEffect()](#useeffect)
 - [](#)
 
 ## Tài liệu tham khảo
@@ -14,6 +14,7 @@ S1: https://drive.google.com/file/d/1eskBoT7LXXWWjdx3KjW2nhAB3eN2HZtn/view <br>
 S2: https://drive.google.com/file/d/1Whnf_XkXGnawOU9Cobw9rzZCHwmbE6of/view <br>
 S3: https://drive.google.com/file/d/1oFbDcgySdw6dHjHfx_nsR4xQ_qecthVz/view <br>
 S4: https://drive.google.com/file/d/1AV7qev81543AbWx63ta5CUxMpsGvLCN4/view <br>
+S5: https://drive.google.com/file/d/10WarKgzSM5Ou1R64OqdiutEl_Y2hDIXG/view <br>
 
 
 ## Khi  nào dùng React Hooks ?
@@ -38,7 +39,15 @@ Khi muốn update state sử dụng `setColor`
 const [color,setColor] = useState('Vân');
 ```
 
-
+Tìm 1 phần tử ở vị trí index
+```js
+const index = todoList.findIndex(x => x.id === todo.id);
+if(index !== -1) {
+  const newTodoList = [...todoList];   //Nhớ clone ra list mới
+  newTodoList.splice(index,1);
+  setTodoList(newTodoList);
+}
+```
 
 ### useEffect()
 ### useContext()
