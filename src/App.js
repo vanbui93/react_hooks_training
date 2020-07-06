@@ -81,8 +81,13 @@ function App() {
     setTodoList(newTodoList);
   }
 
-  function handleSearchTermChange(newFilters) {
+  function handleFiltersChange(newFilters) {
     console.log('newFilters', newFilters);
+    setFilters({
+      ...filters,
+      _page: 1,
+      title_like: newFilters.searchTerm,
+    })
     
   }
 
@@ -96,7 +101,7 @@ function App() {
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
 
       
-      <PostFilterForm onSubmit={handleSearchTermChange}/>
+      <PostFilterForm onSubmit={handleFiltersChange}/>
       <PostList posts={postList} />
       <Pagination
         pagination={pagination}
