@@ -6,7 +6,7 @@ REACT HOOKS - code được viết trong khi làm training của senior Hậu Ng
 - [Tại sao nên dùng hooks ?](###tại-sao-nên-dùng-hooks-?)
 - [useState()](#usestate)
 - [useEffect()](#useeffect)
-- [](#)
+- [Cài đặt component Pagination](#cài-đặt-component-pagination)
 
 ## Tài liệu tham khảo
 S0: https://drive.google.com/file/d/11FZZ6B5TzASNTYEPSXTuywzJ9jqxR8Xq/view <br>
@@ -17,6 +17,7 @@ S4: https://drive.google.com/file/d/1AV7qev81543AbWx63ta5CUxMpsGvLCN4/view <br>
 S5: https://drive.google.com/file/d/10WarKgzSM5Ou1R64OqdiutEl_Y2hDIXG/view <br>
 S6: https://drive.google.com/file/d/1CXxCJsabcG3IkSG1PQaWNVv12ePYICA1/view <br>
 S7: https://drive.google.com/file/d/1UzWLVDvZ7LwsCDrttGyQB6zJve0YA_TU/view <br>
+S8: https://drive.google.com/file/d/1u-wdW1gbRl3OksMzQwzTNqayyK-qNB50/view <br>
 
 
 ## Khi  nào dùng React Hooks ?
@@ -84,6 +85,20 @@ return () => {
 return <h1>Easy Frontend</h1>;
 }
 ```
+
+### Cài đặt component Pagination
+- Có 2 nút : Prev, Next
+- Props:
+ -- pagination: required<br>
+ -- `onPageChange`: hàm này sẽ được gọi nếu user click nút next hoặc prev
+- State: N/A
+- Render:
+ -- Nút prev: trigger hàm `onPageChange` với page = page - 1<br>
+ -- Nút next: trigger hàm `onPageChange` với page = page + 1<br>
+- Lưu ý: 
+ -- nút **prev** sẽ bị disable nếu đang ở trang 1<br>
+ -- nút **next** sẽ bị disable nếu đang ở trang cuối
+
 
 ### useContext()
 ### useReducer()
