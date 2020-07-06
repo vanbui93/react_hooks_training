@@ -8,6 +8,7 @@ REACT HOOKS - code được viết trong khi làm training của senior Hậu Ng
 - [useState()](#usestate)
 - [useEffect()](#useeffect)
 - [Cài đặt component Pagination](#cài-đặt-component-pagination)
+- [useRef - sử dụng kỹ thuật debounce setTimeout](#useref--sử-dụng-kỹ-thuật-debounce-settimeout)
 
 ## Tài liệu tham khảo
 S0: https://drive.google.com/file/d/11FZZ6B5TzASNTYEPSXTuywzJ9jqxR8Xq/view <br>
@@ -119,8 +120,20 @@ _limit=10&page=1
 
 ### Sử dụng kỹ thuật debounce
 
-### useRef
+### useRef - sử dụng kỹ thuật debounce setTimeout
 Sẽ giữ nguyên giá trị sau mỗi lần render
+```js
+ const typingTimeoutRef = useRef(null);
+```
+
+```js
+typingTimeoutRef.current = setTimeout(() => {
+  const formValues = {
+    searchTerm,
+  }
+  onSubmit(formValues);
+}, 500);
+```
 
 ### useContext()
 ### useReducer()
