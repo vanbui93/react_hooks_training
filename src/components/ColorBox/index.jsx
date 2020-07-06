@@ -12,11 +12,16 @@ function getRandomColor() {
 }
 
 function ColorBox() {
+  const initColor = localStorage.getItem('box-color') || 'deeppink';
+  const [color, setColor] = useState(initColor);
+  
   function handleBoxClick() {
     const newColor = getRandomColor();
     setColor(newColor);
+
+    localStorage.setItem('box-color', newColor);
   }
-  const [color, setColor] = useState('green')
+  
   return (
     <div className="color-box"
       style={{ backgroundColor: color }}
