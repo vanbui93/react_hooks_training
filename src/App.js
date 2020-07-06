@@ -81,6 +81,11 @@ function App() {
     setTodoList(newTodoList);
   }
 
+  function handleSearchTermChange(newFilters) {
+    console.log('newFilters', newFilters);
+    
+  }
+
   return (
     <div className="App">
       <h1>ColorBox</h1>
@@ -90,7 +95,7 @@ function App() {
       <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
 
-      <PostFilterForm/>
+      <PostFilterForm onSubmit={handleSearchTermChange}/>
       <PostList posts={postList} />
       <Pagination
         pagination={pagination}

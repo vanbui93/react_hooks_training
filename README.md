@@ -117,6 +117,11 @@ queryString
 _limit=10&page=1
 ```
 
+### Sử dụng kỹ thuật debounce
+
+### useRef
+Sẽ giữ nguyên giá trị sau mỗi lần render
+
 ### useContext()
 ### useReducer()
 
