@@ -20,13 +20,19 @@ function App() {
       setTodoList(newTodoList);
     }
   }
+
+  function handleTodoFormSubmit (formValues) {
+    console.log('form submit', formValues);
+    
+  }
+
   return (
     <div className="App">
       <h1>ColorBox</h1>
       <ColorBox />
 
       <h1>TodoList</h1>
-      <TodoForm />
+      <TodoForm onSubmit = {handleTodoFormSubmit}/>
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
     </div>
   );
