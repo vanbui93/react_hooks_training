@@ -134,6 +134,16 @@ typingTimeoutRef.current = setTimeout(() => {
 }, 500);
 ```
 
+### setInterval
+hàm setInterval sẽ chạy lại sau 1 khoảng thời gian
+```js
+setInterval(() => {
+  const now = new Date();
+  const newTimeString = formatData(now);
+  setTimeString(newTimeString);
+},1000);
+```
+
 ### useContext()
 ### useReducer()
 

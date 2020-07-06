@@ -7,6 +7,7 @@ import PostList from './components/PostList';
 import Pagination from './components/Pagination';
 import queryString from 'query-string';
 import PostFilterForm from './components/PostFilterForm';
+import Clock from './components/Clock';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -107,6 +108,7 @@ function App() {
         pagination={pagination}
         onPageChange={handlePageChange}
       />
+      <Clock/>
     </div>
   );
 }
