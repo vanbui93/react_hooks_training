@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import './style.scss';
 
-function formatData (date) {
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
+function formatData(date) {
+  const hours = `0${date.getHours()}`.slice(-2);
+  const minutes = `0${date.getMinutes()}`.slice(-2);
+  const seconds = `0${date.getSeconds()}`.slice(-2);
   return `${hours}:${minutes}:${seconds}`;
 }
 
@@ -15,13 +16,15 @@ function Clock() {
       const now = new Date();
       const newTimeString = formatData(now);
       setTimeString(newTimeString);
-    },1000);
+    }, 1000);
   }, []);
 
   return (
-    <div style={{fontSize: '42px'}}>
+    <div className="clock">
       <h1>Time Clock</h1>
-      {timeString}
+      <p>
+        {timeString}
+      </p>
     </div>
   );
 }

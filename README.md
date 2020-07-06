@@ -135,7 +135,7 @@ typingTimeoutRef.current = setTimeout(() => {
 ```
 
 ### setInterval
-hàm setInterval sẽ chạy lại sau 1 khoảng thời gian
+hàm setInterval sẽ chạy lại sau 1 khoảng thời gian <br>
 ```js
 setInterval(() => {
   const now = new Date();
