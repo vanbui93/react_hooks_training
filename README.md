@@ -15,6 +15,8 @@ S2: https://drive.google.com/file/d/1Whnf_XkXGnawOU9Cobw9rzZCHwmbE6of/view <br>
 S3: https://drive.google.com/file/d/1oFbDcgySdw6dHjHfx_nsR4xQ_qecthVz/view <br>
 S4: https://drive.google.com/file/d/1AV7qev81543AbWx63ta5CUxMpsGvLCN4/view <br>
 S5: https://drive.google.com/file/d/10WarKgzSM5Ou1R64OqdiutEl_Y2hDIXG/view <br>
+S6: https://drive.google.com/file/d/1CXxCJsabcG3IkSG1PQaWNVv12ePYICA1/view <br>
+S7: https://drive.google.com/file/d/1UzWLVDvZ7LwsCDrttGyQB6zJve0YA_TU/view <br>
 
 
 ## Khi  nào dùng React Hooks ?
@@ -50,6 +52,39 @@ if(index !== -1) {
 ```
 
 ### useEffect()
+SideEffect là gì ?
+- Gọi API lấy dữ liệu
+- Subscriptions
+- setTimeout, setInterval<br>
+
+useEffect() là 1 hook cơ bản <br>
+- Mỗi hook gồm 2 phần: `side effect` và `clean up`
+- Được thực thi sau mỗi lần `render`.
+- Được thực thi ít nhất một lần sau lần render đầu tiên
+- Những lần render sau, chỉ được thực thi nếu có dependencies thay đổi (phụ thuộc)
+- Effect cleanup sẽ được thực thi trước run effect lần tiếp theo hoặc unmount.
+- Cú pháp
+```js
+function useEffect(callback, dependencies) {}
+```
+
+```js
+function App() {
+// executed before each render
+const [color, setColor] = useState('deeppink');
+// executed after each render
+useEffect(() => {
+// do your side effect here ...
+return () => {
+// Clean up here ...
+// Executed before the next render or unmount
+};
+}, []);
+// rendering
+return <h1>Easy Frontend</h1>;
+}
+```
+
 ### useContext()
 ### useReducer()
 

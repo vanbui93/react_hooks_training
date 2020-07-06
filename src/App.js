@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import ColorBox from './components/ColorBox';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
+import PostList from './components/PostList';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -10,6 +11,26 @@ function App() {
     { id: 2, title: 'We love Easy Frontend! 🥰 ' },
     { id: 3, title: 'They love Easy Frontend! 🚀 ' },
   ]);
+
+  const [postList, setPostList] = useState([]);
+
+  useEffect(() => {
+    async function fetchPostList() {
+     try {
+      const requestUrl = 'http://js-post-api.herokuapp.com/api/posts?_limit=10&_page=1';
+      const response = await fetch(requestUrl);
+      const responseJSON = await response.json();
+      console.log(responseJSON);
+
+      const {data} = responseJSON;
+      setPostList(data);
+     } catch (error) {
+       console.log('Failed to fetch oist list', error.message);
+     } 
+    }
+    console.log('POST list effect');    
+    fetchPostList();
+  }, []);  //dấu [] là để chạy đúng 1 lần
 
   function handleTodoClick(todo) {
     console.log(todo);
@@ -40,6 +61,7 @@ function App() {
       <h1>TodoList</h1>
       <TodoForm onSubmit={handleTodoFormSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
+      <PostList posts={postList}/>
     </div>
   );
 }

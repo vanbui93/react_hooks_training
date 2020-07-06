@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import './style.scss';
 
 TodoList.propTypes = {
   todos: PropTypes.array,
@@ -23,6 +24,7 @@ function TodoList(props) {
 
   return (
     <ul className="todo-list">
+      <p>Nhấp vào danh sách dưới để remove</p>
       {todos.map((todo,index) => (         //dùng ngoặc () -> nghĩa là trả về jsx
         <li 
           key={index}
