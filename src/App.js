@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.scss';
 import ColorBox from './components/ColorBox';
 import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -25,6 +26,7 @@ function App() {
       <ColorBox />
 
       <h1>TodoList</h1>
+      <TodoForm />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
     </div>
   );

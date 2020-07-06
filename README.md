@@ -39,7 +39,7 @@ Khi muốn update state sử dụng `setColor`
 const [color,setColor] = useState('Vân');
 ```
 
-Tìm 1 phần tử ở vị trí index
+***Tìm 1 phần tử ở vị trí index***
 ```js
 const index = todoList.findIndex(x => x.id === todo.id);
 if(index !== -1) {
