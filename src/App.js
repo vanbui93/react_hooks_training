@@ -53,7 +53,6 @@ function App() {
   }, [filters]);  //dấu [] là để chạy đúng 1 lần,  [filters] là dependencies, mỗi khi filters thay đổi thì sẽ chạy lại hàm useEffect()
 
   function handlePageChange(newPage) {
-    console.log(newPage);
     setFilters({
       ...filters,
       _page: newPage,

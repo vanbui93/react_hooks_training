@@ -120,7 +120,11 @@ _limit=10&page=1
 ```
 
 ### useRef - sử dụng kỹ thuật debounce setTimeout
-Sẽ giữ nguyên giá trị sau mỗi lần render
+- **useRef()** : Sẽ giữ nguyên giá trị sau mỗi lần render
+- **setTimeout** : Thường được sử dụng nếu bạn muốn hàm của mình thực thi bao nhiêu mili giây kể từ khi gọi method setTimeout(). <br>
+Cú pháp `setTimeout ( expression, timeout );` <br>
+
+Kết hợp giữa useRef và setTimeout => kỹ thuật debounce
 ```js
  const typingTimeoutRef = useRef(null);
 ```
@@ -135,7 +139,12 @@ typingTimeoutRef.current = setTimeout(() => {
 ```
 
 ### setInterval
-hàm setInterval sẽ chạy lại sau 1 khoảng thời gian <br>
+hàm **setInterval** sẽ chạy lại sau 1 khoảng thời gian interval<br>
+Cú pháp
+```js
+setInterval ( expression, interval );
+```
+
 ```js
 setInterval(() => {
   const now = new Date();
