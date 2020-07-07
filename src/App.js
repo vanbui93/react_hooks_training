@@ -8,6 +8,7 @@ import Pagination from './components/Pagination';
 import queryString from 'query-string';
 import PostFilterForm from './components/PostFilterForm';
 import Clock from './components/Clock';
+import CustomHooks from './components/Customhooks';
 
 function App() {
   const [todoList, setTodoList] = useState([
@@ -91,6 +92,8 @@ function App() {
     
   }
 
+  const [showClock, setShowClock] = useState(true);
+
   return (
     <div className="App">
       <h1>ColorBox</h1>
@@ -108,6 +111,10 @@ function App() {
         onPageChange={handlePageChange}
       />
       <Clock/>
+
+      {/* nếu showClock === true thì mới show component này */}
+      {showClock && <CustomHooks/>}  <br></br>
+      <button onClick={() => setShowClock(false)}>Hide [custom hooks] Clock</button>
     </div>
   );
 }

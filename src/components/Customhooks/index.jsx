@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 CustomHooks.propTypes = {
 
@@ -11,24 +11,31 @@ function formatData(date) {
   return `${hours}:${minutes}:${seconds}`;
 }
 
-function CustomHooks(props) {
+function CustomHooks() {
 
   const [timeString, setTimeString] = useState();
 
   useEffect(() => {
-    setInterval(() => {
+    const clockInterval = setInterval(() => {
       const now = new Date();
       const newTimeString = formatData(now);
       setTimeString(newTimeString);
     }, 1000);
 
     return () => {
-      
+      //cleanup khi componentUnMount
+      console.log('Clock cleanup');
+      clearInterval(clockInterval);
     }
   }, []);
 
   return (
-    { timeString }
+    <div className="clock">
+      <h1>Custom hooks</h1>
+      <p>
+        {timeString}
+      </p>
+    </div>
   );
 }
 
