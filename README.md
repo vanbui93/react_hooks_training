@@ -21,8 +21,9 @@ S6: https://drive.google.com/file/d/1CXxCJsabcG3IkSG1PQaWNVv12ePYICA1/view <br>
 S7: https://drive.google.com/file/d/1UzWLVDvZ7LwsCDrttGyQB6zJve0YA_TU/view <br>
 S8: https://drive.google.com/file/d/1u-wdW1gbRl3OksMzQwzTNqayyK-qNB50/view <br>
 s9: https://drive.google.com/file/d/1XBmPJU8ZwnEV96xtDBRpRvkUv8qkUHx-/view <br>
-S10: https://reactjs.org/docs/hooks-effect.html
-S11: https://drive.google.com/file/d/1p6YT6wF90VxvlSO7YTA7ojrMcrP-H5r9/view
+S10: https://reactjs.org/docs/hooks-effect.html <br>
+S11: https://drive.google.com/file/d/1p6YT6wF90VxvlSO7YTA7ojrMcrP-H5r9/view <br>
+S12: https://reactjs.org/docs/hooks-custom.html <br>
 
 
 ## Khi  nào dùng React Hooks ?
@@ -154,6 +155,11 @@ setInterval(() => {
   setTimeString(newTimeString);
 },1000);
 ```
+
+### custom hooks
+Mục đích sử dụng custom hooks: tách biệt phần logic và UI khác nhau. <br>
+Có thể tái sử dụng logic cho các UI khác nhau, không cần truyền props như trước đây.<br>
+Data hoàn toàn độc lập, không có đụng độ về dữ liệu `const {timeString} = useClock();`
 
 ### useContext()
 ### useReducer()

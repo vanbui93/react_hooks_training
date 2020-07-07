@@ -8,7 +8,7 @@ import Pagination from './components/Pagination';
 import queryString from 'query-string';
 import PostFilterForm from './components/PostFilterForm';
 import Clock from './components/Clock';
-import CustomHooks from './components/Customhooks';
+import CustomHooks from './components/CustomHooks';
 
 function App() {
   const [todoList, setTodoList] = useState([
