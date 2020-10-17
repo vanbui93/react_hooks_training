@@ -2,11 +2,14 @@ REACT HOOKS - code được viết trong khi làm training của senior Hậu Ng
 
 ## Table of Contents
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
+- [Setup redux store](#setup-redux-store)
 - [Kết hợp Sass vào node](#kết-hợp-sass-vào-node)
 - [Khi  nào dùng React Hooks ?](#khi--nào-dùng-react-hooks-)
 - [Tại sao nên dùng hooks ?](#tại-sao-nên-dùng-hooks-)
 - [useState()](#usestate)
 - [useEffect()](#useeffect)
+- [useSelector()](#useSelector)
+- [useDispatch()](#useDispatch)
 - [Cài đặt component Pagination](#cài-đặt-component-pagination)
 - [useRef() - sử dụng kỹ thuật debounce setTimeout](#useref---sử-dụng-kỹ-thuật-debounce-settimeout)
 
@@ -25,6 +28,56 @@ S10: https://reactjs.org/docs/hooks-effect.html <br>
 S11: https://drive.google.com/file/d/1p6YT6wF90VxvlSO7YTA7ojrMcrP-H5r9/view <br>
 S12: https://reactjs.org/docs/hooks-custom.html <br>
 
+## Setup redux store
+1. Setup redux store
+- Reducers & Root reducer
+```js
+reducer.js
+const initState={
+  list: [],
+}
+const rootReducer = (initState, action) => {
+  switch (action.type) (
+    case 'ADD_NEW' : {
+      return state;
+    }
+    default : 
+      return state;
+  )
+}
+export default rootReducer;
+```
+- Action creator
+```js
+hobby.js
+export const addNewHobby = (hobby) => {
+  return {
+    type: 'ADD_NEW',
+    payload: hobby,
+  }
+}
+```
+- Store
+
+```js
+store.js
+
+import { createStore } from 'redux';
+import rootReducer from './reducers';
+
+const store = createStore(rootReducer);
+export default store;
+```
+2. Setup redux provider
+- Allow redux store to be accessible from anywhere of the app
+```js
+index.js
+<Provider store={store}>
+  <App/>
+</Provider>
+```
+3. Connect to redux store from component
+- Using the two hooks
 
 ## Khi  nào dùng React Hooks ?
 - Khi muốn dùng state, life cycle,... mà không thích làm việc với class (OOP)
@@ -162,7 +215,26 @@ Có thể tái sử dụng logic cho các UI khác nhau, không cần truyền p
 Data hoàn toàn độc lập, không có đụng độ về dữ liệu `const {timeString} = useClock();`
 
 ### useContext()
-### useReducer()
+### useSelector()
+```js
+const hobbyList = useSelector(state => state.hobby.list);
+```
+hàm useSelector lấy state từ store
+
+### useDispatch()
+```js
+const dispatch = useDispatch();
+
+const handleClick = () => {
+  const newHobby = {
+    id: 1,
+    tittle: 'Hobby'
+  }
+  const action = addNew(newHobby);
+  dispatch(action);
+}
+
+```
 
 ## Kết hợp Sass vào node
 ```sh
