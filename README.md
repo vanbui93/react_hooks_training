@@ -222,6 +222,7 @@ const hobbyList = useSelector(state => state.hobby.list);
 hàm useSelector lấy state từ store
 
 ### useDispatch()
+dùng để dispatch 1 action creator
 ```js
 const dispatch = useDispatch();
 
